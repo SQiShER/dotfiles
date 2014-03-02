@@ -14,3 +14,5 @@ source $ZSH/oh-my-zsh.sh
 source $NVM/nvm.sh
 
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$RVM/bin
+
+alias jsonpretty="ruby -r json -e 'jj JSON.parse gets'"
