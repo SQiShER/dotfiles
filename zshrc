@@ -3,12 +3,9 @@ NVM=$HOME/.nvm
 RVM=$HOME/.rvm
 
 ZSH_THEME="bureau"
-
-source ~/.aliases
-
 CASE_SENSITIVE="true"
 
-plugins=(git git-extras brew mvn sublime encode64 docker vagrant ruby colored-man urltools terminalapp)
+plugins=(osx compleat cp git git-extras github gradle brew mvn sublime encode64 docker vagrant ruby colored-man urltools terminalapp)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,3 +14,5 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X1
 alias jsonpretty="ruby -r json -e 'jj JSON.parse gets'"
 
 source $NVM/nvm.sh
+
+source ~/.aliases
