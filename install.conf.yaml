@@ -4,3 +4,4 @@
     ~/.vimrc: vimrc
     ~/.vim: vim
     ~/.tmux.conf: tmux.conf
+    ~/Brewfile: Brewfile
