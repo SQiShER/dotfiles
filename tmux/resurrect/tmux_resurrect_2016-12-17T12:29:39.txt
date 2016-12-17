@@ -1,6 +1,0 @@
-pane	0	0	:zsh	1	:*	0	:/Users/daniel/projects/topicpro/frontend	0	zsh	:
-pane	0	0	:zsh	1	:*	1	:/Users/daniel/projects/topicpro/frontend	0	zsh	:
-pane	0	0	:zsh	1	:*	2	:/Users/daniel/projects/topicpro/backend	0	zsh	:
-pane	0	0	:zsh	1	:*	3	:/Users/daniel/projects/topicpro/provisioning	1	zsh	:
-window	0	0	1	:*	54f2,180x39,0,0{90x39,0,0[90x19,0,0,1,90x19,0,20,4],89x39,91,0[89x19,91,0,2,89x19,91,20,3]}
-state	0	

@@ -1,4 +1,0 @@
-pane	0	0	:zsh	1	:*	0	:/Users/daniel/projects/topicpro	0	zsh	:
-pane	0	0	:zsh	1	:*	1	:/Users/daniel/projects/topicpro	1	zsh	:
-window	0	0	1	:*	18f2,180x39,0,0{90x39,0,0,0,89x39,91,0,1}
-state	0	
