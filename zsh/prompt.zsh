@@ -34,7 +34,7 @@ is_git_repository() {
 }
 
 has_uncommitted_files() {
-    [ $(git status --short 2>/dev/null | wc -l | awk '{print $1}') -gt 0 ]
+    [ $(git status --short --untracked-files=no 2>/dev/null | wc -l | awk '{print $1}') -gt 0 ]
 }
 
 has_untracked_files() {
@@ -47,25 +47,32 @@ has_unpushed_commits() {
 
 git_plugin() {
     if is_git_repository; then
-        if has_uncommitted_files; then
-            psvar[2]='●'
-        else
-            psvar[2]=''
-        fi
-        if has_untracked_files; then
-            psvar[3]='●'
-        else
-            psvar[3]=''
-        fi
-        if has_unpushed_commits; then
-            psvar[4]='▴'
-        else
-            psvar[4]=''
-        fi
         local branch_name=$(git symbolic-ref --short HEAD 2>/dev/null) ||
         local branch_name="(detached state)"
         psvar[1]=$branch_name
-        RPROMPT_LINE2='[%B%F{green}±%f%1v%b %F{red}%3v%f%F{yellow}%2v%f%F{blue}%4v%f]'
+
+        git_prompt_status=()
+        local git_prompt_status_count=0
+        if has_uncommitted_files; then
+            git_prompt_status+='%F{yellow}●%f'
+            ((git_prompt_status_count += 1))
+        fi
+
+        if has_untracked_files; then
+            git_prompt_status+='%F{red}●%f'
+            ((git_prompt_status_count += 1))
+        fi
+
+        if has_unpushed_commits; then
+            git_prompt_status+='%F{blue}▴%f'
+            ((git_prompt_status_count += 1))
+        fi
+
+        if [ $git_prompt_status_count -gt 0 ] ; then
+            RPROMPT_LINE2='[%B%F{green}±%f%1v%b ${(j..)git_prompt_status}]'
+        else
+            RPROMPT_LINE2='[%B%F{green}±%f%1v%b]'
+        fi
     else
         RPROMPT_LINE2=''
     fi
