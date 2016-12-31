@@ -38,11 +38,11 @@ has_uncommitted_files() {
 }
 
 has_untracked_files() {
-    [ $(git ls-files --others --exclude-standard | wc -l | awk '{print $1}') -gt 0 ]
+    [ $(git ls-files --others --exclude-standard 2>/dev/null | wc -l | awk '{print $1}') -gt 0 ]
 }
 
 has_unpushed_commits() {
-    [ $(git cherry -v | grep -e '^-' | wc -l | awk '{print $1}') -gt 0 ]
+    [ $(git cherry -v 2>/dev/null | grep -e '^+' | wc -l | awk '{print $1}') -gt 0 ]
 }
 
 git_plugin() {
