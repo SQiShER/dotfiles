@@ -1,0 +1,1 @@
+bindkey -e # Enable Emacs mode
