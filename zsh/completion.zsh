@@ -1,5 +1,5 @@
 autoload -Uz compinit
-compinit
+compinit -u
 
 unsetopt AUTO_LIST
 unsetopt LIST_BEEP
