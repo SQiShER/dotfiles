@@ -1,14 +1,12 @@
-zstyle ':completion:*' completer _complete
+zstyle ':completion:*' completer _expand _complete
+zstyle ':completion::expand:*' tag-order all-expansions
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 autoload -Uz compinit
 compinit -u
+bindkey '^[[Z' reverse-menu-complete # Allows Shift+TAB to move backwards through the menu
 
-setopt ALWAYS_TO_END
-setopt AUTO_LIST
-setopt AUTO_MENU
-setopt MENU_COMPLETE
-setopt GLOB_COMPLETE
-setopt HASH_LIST_ALL
 unsetopt LIST_BEEP
-
-zstyle ':completion:*' menu select
+setopt LIST_TYPES
+setopt GLOB_COMPLETE
+setopt MENU_COMPLETE
+setopt COMPLETE_IN_WORD
