@@ -12,5 +12,6 @@
     ~/Brewfile: Brewfile
     ~/.tmux: tmux
     ~/.config/git/ignore: gitignore
+    ~/Library/LaunchAgents/ssh-agent.plist: ssh-agent.plist
 - shell:
     - [git config --global pull.rebase true, Configure git to rebase instead of merge on pull]
