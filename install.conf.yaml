@@ -1,3 +1,8 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      relative: true
 - link:
     ~/.zshrc: zshrc
     ~/.zsh: zsh
@@ -6,4 +11,6 @@
     ~/.tmux.conf: tmux.conf
     ~/Brewfile: Brewfile
     ~/.tmux: tmux
-    ~/.gitignore: gitignore
+    ~/.config/git/ignore: gitignore
+- shell:
+    - [git config --global pull.rebase true, Configure git to rebase instead of merge on pull]
